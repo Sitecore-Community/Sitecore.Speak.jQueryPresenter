@@ -1,0 +1,36 @@
+<html>
+
+<head>
+  <title>Test Case Number 1</title>
+  <link rel="stylesheet" href="../../node_modules/mocha/mocha.css" />
+  <link href="../skins/all.css" rel="stylesheet">
+</head>
+
+<body data-sc-app>
+  <script type="text/x-sitecore-pluginscript" data-sc-id="bindingjsPlugin" data-sc-require="../component/scbindingplugin.js"></script>
+  <div id="mocha">
+    <input data-sc-id="Checkbox" data-sc-presenter="../../dist/jQueryPresenter.js" data-sc-component="advancedcheckbox" type="checkbox" data-sc-properties='{ "isChecked": true }' data-sc-require="../component/advancedcheckbox.js" />
+  </div>
+
+  <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+  <script src="../component/icheck.js"></script>
+  <script src="../../node_modules/handlebars/dist/handlebars.js"></script>
+  <script src="../testHelper.js"></script>
+  <script src="../../node_modules/mocha/mocha.js"></script>
+  <script src="../../node_modules/chai/chai.js"></script>
+  <script src="../../node_modules/sinon/pkg/sinon-1.7.3.js"></script>
+  <script data-main="../component/main.js" src="../../node_modules/requirejs/require.js"></script>
+  <script>
+  TestHelper.setup();
+  window.__speak_config = {
+    deferred: true,
+    debug: true
+  };
+  mocha.ui('bdd');
+  mocha.reporter('html');
+  var should = chai.should();
+  </script>
+  <script src="test.js"></script>
+</body>
+
+</html>
